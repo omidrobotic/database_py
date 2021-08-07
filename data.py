@@ -1,13 +1,12 @@
 import sqlite3
-conn = sqlite3.connect('orders.db')
+conn = sqlite3.connect('omiddatabase.db')
 cur = conn.cursor()
-cur.execute("""CREATE TABLE IF NOT EXISTS users(
+cur.execute("""CREATE TABLE IF NOT EXISTS omid(
    userid INT PRIMARY KEY,
-   fname TEXT,
-   lname TEXT,
-   gender TEXT);
+   name TEXT,
+   equl REAL);
 """)
 conn.commit()
-cur.execute("""INSERT INTO users(userid, fname, lname, gender) 
-   VALUES('00001', 'Nik', 'Piepenbreier', 'male');""")
+user=('1','refree','2.2')
+cur.execute("INSERT INTO omid VALUES(?, ?, ?);", user)
 conn.commit()
