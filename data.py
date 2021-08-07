@@ -23,31 +23,23 @@ def setDataValue(userID,name,equl):
     config.setData.commit()
 
 def readDataValue(userID,name,equl,xpos,ypos):
-    readValue=('1','refree','2.2','2','2')
+    readValue=(userID,name,equl,xpos,ypos)
     config.readCur.execute("INSERT INTO refree VALUES(?, ?, ?, ?, ?);", readValue)
     config.readData.commit()
 
-class seterClass:
+class seter:
     id = 1
     name = 'hello'
     equl = 0
 
-class readerClass:
+class reader:
     id = 1
     name = 'hello'
     equl = 0
     xpos = 0
     ypos = 0
 
-seter = seterClass()
-seter.id=10
-seter.name='ali'
-seter.equl=10
 
-clearSetData(seter.id)
-setDataValue(seter.id,seter.name,seter.equl)
-
-print(findInSetData('ali'))
 
 
 
