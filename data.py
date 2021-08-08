@@ -6,7 +6,7 @@ def findInSetData(name):
 
 def findInReadData(name):
     config.readCur.execute("SELECT * FROM refree WHERE name=?", (name,))
-    return cconfig.readCur.fetchall()
+    return config.readCur.fetchall()
     
 def clearSetData(userID):
     config.setCur.execute('DELETE FROM omid WHERE userid=?', (userID,))
