@@ -1,21 +1,25 @@
 import configDataBase as config
 
 def findInSetData(name):
-    config.setCur.execute("SELECT * FROM omid WHERE name=?", (name,))
-    return config.setCur.fetchall()
+    config.setCur.execute("SELECT * FROM omid WHERE NAME=?", (name,))
+    return config.setCur.fetchone()[2]
 
 def findInReadData(name):
-    config.readCur.execute("SELECT * FROM refree WHERE name=?", (name,))
+    config.readCur.execute("SELECT * FROM refree WHERE NAME=?", (name,))
     return config.readCur.fetchall()
     
 def clearSetData(userID):
-    config.setCur.execute('DELETE FROM omid WHERE userid=?', (userID,))
+    config.setCur.execute('DELETE FROM omid WHERE ID=?', (userID,))
     config.setData.commit()
 
 def clearReadData(userID):
-    config.readCur.execute('DELETE FROM refree WHERE userid=?', (userID,))
+    config.readCur.execute('DELETE FROM refree WHERE ID=?', (userID,))
     config.readData.commit()
 
+def updateDataBase(name,equl):
+    setValue=(equl,name)
+    config.setCur.execute("UPDATE omid set EQUL = ? where NAME=?", setValue)
+    config.setData.commit()
     
 def setDataValue(userID,name,equl):
     setValue=(userID,name,equl)

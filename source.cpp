@@ -7,7 +7,7 @@
 
 
 using namespace std;
-main()
+int main()
 {
      sqlite3 *db;
    char *zErrMsg = 0;
@@ -22,5 +22,5 @@ main()
       fprintf(stderr, "Opened database successfully\n");
    }
    sqlite3_close(db);
-	getch();
+	return 0;
 }
