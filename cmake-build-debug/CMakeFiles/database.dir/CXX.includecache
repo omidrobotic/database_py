@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mhz/database/main.cpp
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+sqlite3.h
+-
+string.h
+-
+Windows.h
+-
+unistd.h
+-
+
