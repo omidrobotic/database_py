@@ -52,7 +52,10 @@ int dataBase(char *command,sqlInit *sqlData)
         fprintf(stdout, "Operation done successfully\n");
         return true;
     }
+<<<<<<< HEAD
     s
+=======
+>>>>>>> 1328f1eb350a36ef619e91ee358a7db0f9f3083b
     return false;
 }
 int removeDataInDataBase(int ID,char* table,sqlInit *sqlData)
